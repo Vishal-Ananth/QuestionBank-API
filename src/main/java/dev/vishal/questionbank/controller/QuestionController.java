@@ -35,6 +35,7 @@ public class QuestionController {
         return questionService.createQuestion(question);
     }
 
+    @PutMapping("update")
     public String updateQuestion(@RequestBody Question question){
         return questionService.updateQuestion(question);
     }
