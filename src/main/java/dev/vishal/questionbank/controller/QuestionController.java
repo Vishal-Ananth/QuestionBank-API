@@ -34,4 +34,8 @@ public class QuestionController {
     public String createQuestion(@RequestBody Question question){
         return questionService.createQuestion(question);
     }
+
+    public String updateQuestion(@RequestBody Question question){
+        return questionService.updateQuestion(question);
+    }
 }

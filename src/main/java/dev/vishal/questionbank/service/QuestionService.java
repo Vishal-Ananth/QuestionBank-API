@@ -29,4 +29,9 @@ public class QuestionService {
     public List<Question> viewByDifficulty(String difficulty) {
         return questionDao.findByDifficulty(difficulty);
     }
+
+    public String updateQuestion(Question question) {
+        questionDao.saveAndFlush(question);
+        return  "Question " + question.getId() + " updated successfully !";
+    }
 }
