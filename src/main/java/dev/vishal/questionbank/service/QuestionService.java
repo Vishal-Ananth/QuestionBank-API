@@ -39,4 +39,8 @@ public class QuestionService {
         questionDao.deleteById(id);
         return "Question "+id+" deleted successfully!";
     }
+
+    public List<Question> viewByTopicByDifficulty(String topic, String difficulty) {
+        return questionDao.findByTopicByDifficulty(topic,difficulty);
+    }
 }

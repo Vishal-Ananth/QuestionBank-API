@@ -30,6 +30,11 @@ public class QuestionController {
         return questionService.viewByDifficulty(difficulty);
     }
 
+    @GetMapping(path = "filter")
+    public List<Question> viewByTopicByDifficulty(@RequestParam String topic,@RequestParam String difficulty){
+        return questionService.viewByTopicByDifficulty(topic,difficulty);
+    }
+
     @PostMapping("add")
     public String createQuestion(@RequestBody Question question){
         return questionService.createQuestion(question);
