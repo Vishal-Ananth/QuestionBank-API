@@ -29,4 +29,18 @@ public class QuestionService {
     public List<Question> viewByDifficulty(String difficulty) {
         return questionDao.findByDifficulty(difficulty);
     }
+
+    public String updateQuestion(Question question) {
+        questionDao.saveAndFlush(question);
+        return  "Question " + question.getId() + " updated successfully !";
+    }
+
+    public String deleteQuestion(Integer id) {
+        questionDao.deleteById(id);
+        return "Question "+id+" deleted successfully!";
+    }
+
+    public List<Question> viewByTopicByDifficulty(String topic, String difficulty) {
+        return questionDao.findByTopicByDifficulty(topic,difficulty);
+    }
 }
