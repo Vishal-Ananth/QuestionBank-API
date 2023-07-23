@@ -34,4 +34,9 @@ public class QuestionService {
         questionDao.saveAndFlush(question);
         return  "Question " + question.getId() + " updated successfully !";
     }
+
+    public String deleteQuestion(Integer id) {
+        questionDao.deleteById(id);
+        return "Question "+id+" deleted successfully!";
+    }
 }
