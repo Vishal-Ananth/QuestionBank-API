@@ -20,15 +20,15 @@ public class QuestionController {
         return questionService.viewQuestions();
     }
 
-//    @RequestMapping(method = RequestMethod.GET, produces = "/param",params = "topic")
-//    public List<Question> viewByTopic(@RequestParam String topic){
-//        return questionService.viewByTopic(topic);
-//    }
+    @GetMapping(path = "topic/{topic}")
+    public List<Question> viewByTopic(@PathVariable String topic){
+        return questionService.viewByTopic(topic);
+    }
 
-//    @GetMapping("/difficulty")
-//    public List<Question> viewByDifficulty( String difficulty){
-//        return questionService.viewByDifficulty(difficulty);
-//    }
+    @GetMapping(path = "difficulty/{difficulty}")
+    public List<Question> viewByDifficulty(@PathVariable String difficulty){
+        return questionService.viewByDifficulty(difficulty);
+    }
 
     @PostMapping("add")
     public String createQuestion(@RequestBody Question question){
