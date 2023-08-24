@@ -14,4 +14,7 @@ public interface QuestionDao extends JpaRepository<Question,Integer> {
 
     @Query(value = "SELECT * FROM QUESTION q WHERE q.topic=:topic AND q.difficulty=:difficulty",nativeQuery = true)
     List<Question> findByTopicByDifficulty(String topic, String difficulty);
+
+    @Query(value = "SELECT * FROM QUESTION q WHERE q.topic=:topic ORDER BY RANDOM() LIMIT :noOfQuestions",nativeQuery = true)
+    List<Question> findQuestionsByTopic(String topic, Integer noOfQuestions);
 }
